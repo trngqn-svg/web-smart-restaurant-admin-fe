@@ -54,7 +54,6 @@ export default function Login() {
           Admin Login
         </h2>
 
-        {/* Username */}
         <div>
           <label className="block text-sm font-medium mb-1">
             Username
@@ -79,7 +78,6 @@ export default function Login() {
           )}
         </div>
 
-        {/* Password */}
         <div>
           <label className="block text-sm font-medium mb-1">
             Password

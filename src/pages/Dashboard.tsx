@@ -1,4 +1,3 @@
-// src/pages/Dashboard.tsx
 import { logoutApi } from '../api/auth';
 import { useNavigate } from 'react-router-dom';
 

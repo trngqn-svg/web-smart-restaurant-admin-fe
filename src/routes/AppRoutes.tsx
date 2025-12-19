@@ -1,22 +1,28 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import AdminLayout from '../layouts/AdminLayout';
+import Dashboard from '../pages/Dashboard';
+import Tables from '../pages/Table';
 import Login from '../pages/Login';
-import Dashboard from '../pages/DashBoard';
 import ProtectedRoute from './ProtectedRoute';
 
-export default function AppRoutes() {
+export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
       <Route path="/login" element={<Login />} />
 
       <Route
-        path="/dashboard"
         element={
           <ProtectedRoute>
-            <Dashboard />
+            <AdminLayout />
           </ProtectedRoute>
         }
-      />
+      >
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="tables" element={<Tables />} />
+        
+      </Route>
+
+      <Route path="*" element={<Navigate to="/dashboard" />} />
     </Routes>
   );
 }
